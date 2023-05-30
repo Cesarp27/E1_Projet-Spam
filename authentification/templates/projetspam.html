@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Classification</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+{% include "navBar.html" %}
+
+<div class="container">
+
+  <h1> Détection des messages indésirables  </h1>
+  <h4>Utilisateur : {{ request.user.username }} </h4>
+
+  <br>
+  
+  <h5>Comparaison des différentes modèles utilisées</h5> 
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12">
+        {% autoescape off %}
+          {{ graph_heatM }}
+        {% endautoescape %}
+      </div>
+      <div class="col-md-6 col-xs-12">
+        {% autoescape off %}
+          {{ graph_time_heat }}
+        {% endautoescape %}
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      Si vous voulez faire une prédiction sur vos propres données :<br><br>
+      <label for="file">Veuillez sélectionner un fichier :</label>
+      <select name="file" id="file">
+          {% for file in files %}
+            {% if file.id == selected_file_id %}
+            <option value="{{ file.id }}" selected>{{ file.file.name }}</option>
+            {% else %}
+            <option value="{{ file.id }}">{{ file.file.name }}</option>
+            {% endif %}
+          {% endfor %}
+      </select>
+    </div>
+
+    <button type="submit">Utiliser ce fichier</button> {{error_message}}
+  </form>
+
+  {% if fichier %}
+    <p>Fichier sélectionnée: {{ fichier }}</p>
+  {% endif %}
+
+  
+  {% comment %} {% if selected_column %}  {% endcomment %}
+  {% if df is not None and not df.empty %}
+    <h5>Naive Bayes classifier for multinomial models</h5>     
+    <form method="POST">
+      {% csrf_token %} 
+        <input type="submit" name="MNB" value="Faire la prédiction" class="btn btn-success">
+    </form>
+
+    <br>
+
+    {% if data_news_sms_pred is not None and not df.empty%}  
+      <div class="row">
+        <div class="col-xs-12">
+          <br>
+          <div class="container">
+            <h4 class="text-center">Résultat de la prédiction pour le fichier: {{ fichier }}</h4>            
+            <table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  <th>type</th>
+                  <th>text</th>
+                  <th>prediction</th>
+                  {% autoescape off %}
+                    <th>probabilite spam (%)</th>
+                  {% endautoescape %}
+                </tr>
+              </thead>
+              <tbody>
+              <!-- jinja2 Technique -->
+              {% if data_json %}  
+              {% for i in data_json %}
+                <tr>
+                  <td>{{i.type}}</td>
+                  <td>{{i.text}}</td>
+                  <td>{{i.prediction}}</td>
+                  <td>{{i.probabilite_spam}}</td>
+                </tr>
+              {% endfor %}
+              {% endif %}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+    {% endif %}
+
+  {% endif %}
+
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Suppression de compte</h4>
+        </div>
+        <div class="modal-body">
+          <p>Es-tu sûr de vouloir supprimer ton compte ?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="{% url 'suppression' user.id %}">
+                <button type="button" class="btn btn-danger">Valider</button>
+            </a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <br>
+          <p>Spam Pred © 2023. Tous droits réservés.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
