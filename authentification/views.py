@@ -33,12 +33,21 @@ from .Projet_spam.predNouvSms import Pred_news_spams, loaded_model_MNB
 # import io
 import base64 #, urllib
 
+# API
+from rest_framework import generics
+from .serializers import FilesUploadSerializer
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
+
 from io import BytesIO
 
 # Load models
 import pickle
 
 import json
+
+
 
 
 
@@ -841,3 +850,16 @@ def projetspam(request):
     
     return render(request, "projetspam.html", context)
 
+
+# API
+class FilesUploadList(generics.ListCreateAPIView):
+    queryset = FilesUpload.objects.all()
+    serializer_class = FilesUploadSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]    
+
+class FilesUploadDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FilesUpload.objects.all()
+    serializer_class = FilesUploadSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]

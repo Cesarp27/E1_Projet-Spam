@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from authentification.views import inscription, connexion, deconnexion, index, suppression, classification, regression, clustering, projetspam
-
+from authentification.views import FilesUploadList, FilesUploadDetail
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework.authtoken.views import obtain_auth_token
 
 from django.urls import include
 
@@ -35,6 +36,11 @@ urlpatterns = [
     path("clustering", clustering, name="clustering"),
     # path('', include("fileupload.urls")),
     path("projetspam", projetspam, name="projetspam"),
+    # api
+    path('api/FilesUpload/', FilesUploadList.as_view(), name='FilesUpload-list'),
+    path('api/FilesUpload/<int:pk>/', FilesUploadDetail.as_view(), name='FilesUpload-detail'),
+    # génération de tokens
+    path('api-token-auth/', obtain_auth_token, name='api-token-auth'),
     path("suppression/<int:id>", suppression, name="suppression"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

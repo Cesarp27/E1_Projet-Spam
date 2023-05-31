@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "authentification",
     "application",
     "fileupload",
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,9 @@ AUTH_USER_MODEL = "authentification.Utilisateur"
 LOGIN_URL = 'connexion'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # media directory in the root directory
 MEDIA_URL = '/media/'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
