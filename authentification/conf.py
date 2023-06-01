@@ -1,0 +1,2 @@
+username = 'projetSpam'
+password = 'projetSpam'

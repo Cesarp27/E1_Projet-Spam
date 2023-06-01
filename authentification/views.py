@@ -853,13 +853,21 @@ def projetspam(request):
 
 # API
 class FilesUploadList(generics.ListCreateAPIView):
-    queryset = FilesUpload.objects.all()
-    serializer_class = FilesUploadSerializer
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]    
-
-class FilesUploadDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = FilesUpload.objects.all()
+    #queryset = FilesUpload.objects.all()
     serializer_class = FilesUploadSerializer
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        userid = self.request.user.id
+        return FilesUpload.objects.filter(userid=userid)
+
+class FilesUploadDetail(generics.RetrieveUpdateDestroyAPIView):
+    #queryset = FilesUpload.objects.all()
+    serializer_class = FilesUploadSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        userid = self.request.user.id
+        return FilesUpload.objects.filter(userid=userid)
