@@ -135,3 +135,41 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'C:/Users/cesar/Documents/Dos/Entrega final de la formacion IA/E1/E1_Projet-Spam/django.log',  
+        },
+        
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,  
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
+ADMINS = [
+    ('César', 'cesardeveloppeurdata2020@gmail.com'),
+]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'cesardeveloppeurdata2020@gmail.com'
+EMAIL_HOST_PASSWORD = 'ptwpeohgyjklmounx'
+EMAIL_USE_TLS = True  
+EMAIL_USE_SSL = False  

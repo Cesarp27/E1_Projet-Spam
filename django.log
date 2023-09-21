@@ -1,0 +1,130 @@
+Internal Server Error: /projetspam
+Traceback (most recent call last):
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cesar\Documents\Dos\Entrega final de la formacion IA\E1\E1_Projet-Spam\authentification\views.py", line 752, in projetspam
+    fig_heatM = plot_heatmap_spam2(df = df_tot_heatmap)
+NameError: name 'plot_heatmap_spam2' is not defined
+"GET /projetspam HTTP/1.1" 500 75953
+Internal Server Error: /projetspam
+Traceback (most recent call last):
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cesar\Documents\Dos\Entrega final de la formacion IA\E1\E1_Projet-Spam\authentification\views.py", line 847, in projetspam
+    'df': df,
+UnboundLocalError: local variable 'df' referenced before assignment
+"GET /projetspam HTTP/1.1" 500 97971
+Internal Server Error: /projetspam
+Traceback (most recent call last):
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cesar\Documents\Dos\Entrega final de la formacion IA\E1\E1_Projet-Spam\authentification\views.py", line 847, in projetspam
+    'df': df,
+UnboundLocalError: local variable 'df' referenced before assignment
+"GET /projetspam HTTP/1.1" 500 97971
+Internal Server Error: /projetspam
+Traceback (most recent call last):
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\contrib\auth\decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\cesar\Documents\Dos\Entrega final de la formacion IA\E1\E1_Projet-Spam\authentification\views.py", line 744, in projetspam
+    files = FilesUploadx.objects.filter(userid=request.user.id)
+NameError: name 'FilesUploadx' is not defined
+"GET /projetspam HTTP/1.1" 500 75716
+Internal Server Error: /connexion
+Traceback (most recent call last):
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_media_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\cesar\Documents\Dos\Entrega final de la formacion IA\E1\E1_Projet-Spam\authentification\views.py", line 196, in connexion
+    return render(request, "connexion.html")
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 240: 'get_media_prefix'. Did you forget to register or load this tag?
+"GET /connexion HTTP/1.1" 500 155026
+Internal Server Error: /connexion
+Traceback (most recent call last):
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'get_media_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\cesar\Documents\Dos\Entrega final de la formacion IA\E1\E1_Projet-Spam\authentification\views.py", line 196, in connexion
+    return render(request, "connexion.html")
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "c:\Users\cesar\Documents\Dos\20230306_Patrick_Projet_IA\venv\lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 240: 'get_media_prefix'. Did you forget to register or load this tag?
+"GET /connexion HTTP/1.1" 500 154864

@@ -823,6 +823,7 @@ def projetspam(request):
         
         df = df.dropna()
         data_news_sms_pred = Pred_news_spams(df=df, target=selected_column, model=loaded_model_MNB)
+        data_news_sms_pred.to_csv('derniere_prédiction_de_messages.csv', index = False)
         
         # parsing the DataFrame in json format.
         json_records = data_news_sms_pred.reset_index().to_json(orient ='records')

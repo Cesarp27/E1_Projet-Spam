@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Connexion</title>
 <style>
 body {
   font-family: 'Open Sans',sans-serif;
@@ -235,7 +235,11 @@ input.submit {
 	<h4 style="color:black">{{ message }}</h4>
 <div class="content">
 	<div class="container">
-		<img class="bg-img" src="https://mariongrandvincent.github.io/HTML-Personal-website/img-codePen/bg.jpg" alt="">
+    {% comment %} <img class="bg-img" src="https://www.stjohns.edu/sites/default/files/2022-05/istock-1296650655.jpg" alt=""> {% endcomment %}
+    <img class="bg-img" src="https://cdn.pixabay.com/photo/2020/03/06/13/55/security-4907127_1280.jpg" alt="">
+    
+    {% comment %} {% load static %} <img  src="{% static "media/stop_spam.jpg" %}" alt=""/> {% endcomment %}
+    
 			<div class="menu">
 				<a href="{% url 'inscription' %}" class="btn-connexion active"><h2>S'inscrire</h2></a>
 				<a href="{% url 'connexion' %}" class="btn-enregistrer"><h2>Se connecter</h2></a>

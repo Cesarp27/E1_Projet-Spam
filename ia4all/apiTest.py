@@ -33,17 +33,3 @@ headers = {
 response = requests.get(url, headers=headers)
 print(response.json())
 
-
-
-
-    # def test_get_with_token_2(self):
-    #     # Configurer l'en-tête Authorization avec le jeton
-    #     self.client.credentials(HTTP_AUTHORIZATION=f'Token {self.token}')
-
-    #     # Effectuer la requête GET à l'URL spécifique
-    #     url = '/api/FilesUpload/4'
-    #     response = self.client.get(url)
-    #     print(response)
-
-    #     # Vérifier le code de réponse et les données reçues
-    #     self.assertIn(response.status_code, [200, 301])
